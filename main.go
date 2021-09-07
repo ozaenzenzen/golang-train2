@@ -11,13 +11,14 @@ type Car struct {
 	Title   string `json:"Title"`
 	Desc    string `json:"Desc"`
 	Content string `json:"Content"`
+	Address string `json:"Address"`
 }
 
 type Cars []Car
 
 func allCars(w http.ResponseWriter, r *http.Request) {
 	car := Cars{
-		Car{Title: "Test Titile", Desc: "Test Desc", Content: "Test Content"},
+		Car{Title: "Test Titile", Desc: "Test Desc", Content: "Test Content", Address: "Test Address"},
 	}
 	fmt.Println("Endpoint hit: All Cars Endpoint")
 	json.NewEncoder(w).Encode(car)
